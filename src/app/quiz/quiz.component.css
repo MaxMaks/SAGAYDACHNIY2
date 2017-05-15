@@ -1,0 +1,36 @@
+.start, .quit{
+	width: 150px;
+	margin: 10px auto;
+	display: block;
+}
+
+.quit{
+	display: inline-block;
+	margin: 10px 10px;
+}
+input[type='radio'],
+label{
+	cursor: pointer;
+}
+
+
+.hdr{
+	margin-top: 1em;
+}
+.question:nth-child(n+2) .hdr{
+	margin-top: 4em; 
+}
+
+legend{
+	padding: 0 10px;
+}
+fieldset:nth-last-child(1){
+	margin-top: 20px;
+}
+
+fieldset{
+	text-align: justify;
+}
+.btn_cont{
+	text-align: center;
+}

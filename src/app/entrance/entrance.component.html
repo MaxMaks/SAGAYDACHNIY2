@@ -1,0 +1,43 @@
+<div class="main-page">
+	<div class="unlogged" *ngIf="!qwe.name">
+		<fieldset>
+			<legend><h4>Добро пожаловать</h4></legend>
+			Користувач потрапляє на сторінку авторизації. Після авторизації – головна сторінка порталу з інформацією про проект. Потім подається біографічна довідка про гетьмана П.Сагайдачного і починається квест, який складається з чек-поінтів.Кожен чек-поінт квесту включає чотири частини:
+		</fieldset>
+		<h3>Для начала работы, пожалуйста, <a href="#" (click)="qwe.login()">авторизируйтесь</a></h3>
+	</div>
+			
+</div>
+
+<div class="wrap">
+
+
+	<div *ngIf="qwe.name">
+		<div class="nameblock">
+			<img  class = "profileImage" src={{qwe.profileUrl}}>
+			<h3>{{qwe.currentname}}</h3>
+			<h3><a href="#" id="logout" (click)="qwe.logout()">Выход</a></h3>
+			<h3><a routerLink="/students" href="#" id="myStudents" *ngIf="qwe.currentRole == 'teacher' && !status" (click) = "changeStatus()">Мои студенты</a></h3>
+			<h3><a routerLink="/quiz" href="#" id="quiz" *ngIf="qwe.currentRole == 'teacher' && status" (click) = "changeStatus()">Информация о тесте</a></h3>
+		</div>
+	</div>
+
+	
+	<router-outlet></router-outlet>
+
+
+	<div class="choice" *ngIf="firstTime && loaded">
+		<fieldset>
+			<legend>main info</legend>
+				Наш проект был создан для развития интереса детей и подростков к истории родного края, а именно к такой исторической личности как П. Сагайдачный. Проект позволяет ученикам получать знания и проходить тесты самостоятельно, а также работать с учителем, который будет отслеживать успехи ученика. Так как вы зашли сюда впервые, мы просим вас выбрать вашу роль.
+			<br>
+			<button (click) = "addRole('teacher')">Учитель</button>
+			<button (click) = "addRole('student')">Ученик</button>
+		</fieldset>
+	</div>
+
+	
+	
+<!-- 	<app-accounts *ngIf="!firstTime && loaded"></app-accounts> -->
+
+</div>

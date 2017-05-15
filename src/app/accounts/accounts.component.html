@@ -1,0 +1,33 @@
+<div class="wrap">
+
+<h4>Для того, чтобы 'перетащить' студента в свою группу, просто кликните на его имя. Таким же способом удалите его из списка своих учеников</h4>
+	<!-- <fieldset>
+		<legend>клик ничего не делает в этом поле, оно тут просто чтобы я видел всех чертов зареганых</legend>
+		<ul>
+			<li *ngFor="let item of qwe.items | async"><span> {{item.name}} - {{item.Role}} </span></li>
+		</ul>	
+		</fieldset> -->
+		
+
+		<!-- <fieldset *ngIf="qwe.currentRole == 'student'">
+		<legend>Teachers</legend>
+		<ul>
+			<li *ngFor="let item of qwe.teachers | async"><span> {{item.name}} </span></li>
+		</ul>
+		</fieldset> -->
+
+		<fieldset *ngIf="qwe.currentRole == 'teacher'">
+		<legend>Студенты без преподователя</legend>
+		<ul>
+			<li *ngFor="let item of qwe.leftovers | async"><span (click) = "addConnection(item.name,item.Id, item.mark)"> {{item.name}} </span></li>
+		</ul>
+	</fieldset>
+
+	<fieldset *ngIf="qwe.currentRole == 'teacher'">
+		<legend>Мои студенты</legend>
+		<ul>
+			<li *ngFor="let item of qwe.chosens | async"><span (click) = "RemoveConnection(item.name,item.Id, item.mark)"> {{item.name}} </span></li>
+		</ul>
+	</fieldset>
+</div>
+

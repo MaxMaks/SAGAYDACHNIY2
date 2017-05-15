@@ -1,0 +1,149 @@
+<div class="sagayInfo" *ngIf="qwe.currentRole">
+
+
+
+
+
+
+
+    <div class="information" [ngStyle]="info_style" *ngIf="qwe.currentRole == 'student'">
+
+        <fieldset *ngIf="result >=0 ">
+            <legend> <h4>Результаты предыдущего теста </h4></legend>
+            Ваш последний результат теста: <b>{{result}}</b>
+        </fieldset>
+
+
+        <fieldset *ngIf="result == undefined ">
+            <legend> <h4>Результаты предыдущего теста </h4></legend>
+            Вы еще не проходили данный тест.
+        </fieldset>
+
+    </div>
+
+		<fieldset>
+            <legend  [ngStyle]="info_style" >Информация перед тестом</legend>
+			<legend  [ngStyle]="style" >Тестирование знаний</legend>
+			<div class="information" [ngStyle]="info_style">
+				{{info}}
+				<button *ngIf="qwe.currentRole == 'student'" class="start" (click) = "start_test()">Начать тестирование</button>
+			</div>
+
+
+
+    
+	<div class="test"  [ngStyle]="style">
+    <div class="question">
+        <h4 class="hdr">Какой период называют "периодом героических походов"?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer1_1" name="answer1">
+			<label for="answer1_1">
+            Восстание 1591-1596 гг, когда на освобожденных территориях вводился казацкий строй</label></li>
+            <li><input type="radio" id="answer1_2" name="answer1" class="correct">
+			<label for="answer1_2">
+            Удачные морские походы казаков на турецко-татарские крепости в течение первых двух десятилетий XVII века, в результате которых были освобождены сотни тысяч невольников</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">На какие годы приходится гетманства Петра Конашевича-Сагайдачного?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer2_1" name="answer2">
+			<label for="answer2_1">
+            На 90 годы XVI в.</label></li>
+            <li><input type="radio" id="answer2_2" class="correct" name="answer2">
+            <label for="answer2_2">На первые десятилетия XVII в.</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Как казаки называли свои лодки, на которых они совершали походы во владение Османской империи?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer3_1" name="answer3">
+            <label for="answer3_1">Каторгами</label></li>
+            <li><input type="radio" id="answer3_2" name="answer3" class="correct">
+            <label for="answer3_2">Чайками</label></li>
+            <li><input type="radio" id="answer3_3" name="answer3">
+            <label for="answer3_3">Триангуламы</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Чем памятен год 1620-й в истории Украины?</h4>
+        <ol type="a">
+            <li><input class="correct" type="radio" id="answer4_1" name="answer4">
+            <label for="answer4_1">Мерами Киевского братства и казаков во главе с П.Конашевичем-Сагайдачным была восстановлена церковную православную иерархию</label></li>
+            <li><input type="radio" id="answer4_2" name="answer4">
+            <label for="answer4_2">Состоялся поход П. Конашевича-Сагайдачного на Москву, который имел целью помочь королю Владиславу</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Где был расположен крупнейший невольничий рынок в Крыму, куда направил свой победный поход гетман П. Конашевич-Сагайдачный?</h4>
+        
+        <ol type="a">
+            <li><input type="radio" id="answer5_1" name="answer5">
+            <label for="answer5_1">В Хотине</label></li>
+            <li><input type="radio" class="correct" id="answer5_2" name="answer5">
+            <label for="answer5_2">В Кафе</label></li>
+            <li><input type="radio" id="answer5_3" name="answer5">
+            <label for="answer5_3">В Яссах</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Вследствие каких событий было подписано Деулинское перемирия между Московией и Речью Посполитой?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer6_1" name="answer6">
+            <label for="answer6_1">В результате Хотинской войны</label></li>
+            <li><input type="radio" id="answer6_2" class="correct" name="answer6">
+            <label for="answer6_2">Вследствие похода польского королевича Владислава вместе с гетманом Сагайдачным на Москву</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Какие земли за Деулинским перемирием между Московией и Речью Посполитой отошли к Польше на 14, 5 лет?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer7_1" name="answer7" class="correct">
+            <label for="answer7_1">Смоленщина и Чернигово-Северщина</label></li>
+            <li><input type="radio" id="answer7_2" name="answer7" ><label for="answer7_2">Киевщина, Брацлавщина и Волынь</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Либо государству были подчинены крепости, против которых направляли свои морские походы запорожские казаки в эпоху героических походов?</h4>
+        <ol type="a">
+            <li><input type="radio" class="correct" id="answer8_1" name="answer8"><label for="answer8_1">Османской империи</label></li>
+            <li><input type="radio" id="answer8_2" name="answer8"><label for="answer8_2">Речи Посполитой</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Какое событие из названных ниже связана с Петра Конашевича-Сагайдачного?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer9_1" name="answer9"><label for="answer9_1">Введение казацкого реестрового войска</label></li>
+            <li><input type="radio" id="answer9_2" class="correct" name="answer9"><label for="answer9_2">Вступление Войска Запорожского в Киевское братство</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Какие армии были противниками в Хотинской войне?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer10_1" name="answer10" class="correct">
+            <label for="answer10_1">Польская армия, усиленная 40 тыс. казацким войском, турецко-татарская армия</label></li>
+            <li><input type="radio" id="answer10_2" name="answer10"><label for="answer10_2">Польская армия, усиленная 40 тыс. казацким войском, московско-татарская армия</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Кто сыграл решающую роль в победе Речи Посполитой в Хотинской войне?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer11_1" name="answer11"><label for="answer11_1">Войско Речи Посполитой, возглавляемое коронным литовским гетманом Карлом Ходкевичем</label></li>
+            <li><input type="radio" id="answer11_2" name="answer11" class="correct"><label for="answer11_2">Отряды, возглавляемые Петра Конашевича-Сагайдачного</label></li>
+        </ol>
+    </div>
+    <div class="question">
+        <h4 class="hdr">Какими были последствия Хотинской войны?</h4>
+        <ol type="a">
+            <li><input type="radio" id="answer12_1" name="answer12"><label for="answer12_1">Османская империя потеряла значительные территории, в частности земли Крымского ханства, а также придунайские страны - Молдавию, Валахию, Трансильванию</label></li>
+            <li><input type="radio" id="answer12_2" class="correct" name="answer12"><label for="answer12_2">Польша отвела угрозу потерять значительные территории. Битва привело к усилению освободительной борьбы покоренных турками народов</label></li>
+        </ol>
+    </div>
+    <div class="btn_cont">
+        <button id="submit" class= "quit" (click) = "finish()">Результат</button>
+        <button id="submit" class="quit" (click) = "finish_wo()">Выход</button>
+    </div>
+</div>
+
+		</fieldset>
+	</div>
